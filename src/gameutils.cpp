@@ -15,7 +15,9 @@ namespace PONG
 
     void InitColors(Color& WHITE, Color& BLACK)
     {
-
+        WHITE.r = 255;
+        WHITE.g = 255;
+        WHITE.b = 255;
     }
 
 
