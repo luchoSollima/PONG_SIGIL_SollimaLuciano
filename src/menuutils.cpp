@@ -33,7 +33,7 @@ namespace PONG
 
 	void DrawMenuElements(BUTTON buttonPlay, BUTTON buttonRules, BUTTON buttonCredits, BUTTON buttonExit)
 	{
-		BeginDrawing();
+		slRender();
 
 		ClearBackground(BLACK);
 
@@ -64,7 +64,7 @@ namespace PONG
 
 
 
-		EndDrawing();
+		//EndDrawing();
 	}
 
 	void DrawRules(BUTTON buttonMainMenu)

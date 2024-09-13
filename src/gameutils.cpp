@@ -60,9 +60,9 @@ namespace PONG
 
     void CheckCollisions(BALL& ball, PADDLE& leftPaddle, PADDLE& rightPaddle, int& player1Score, int& player2Score, float deltaTime)
     {
-        bool player1Scores = ball.ballCenter.x >= GetScreenWidth();
+        bool player1Scores = ball.ballCenter.x >= screenWidth;
         bool player2Scores = ball.ballCenter.x <= 0;
-        bool ballOutOfBounds = ball.ballCenter.y >= GetScreenHeight() || ball.ballCenter.y <= 0;
+        bool ballOutOfBounds = ball.ballCenter.y >= screenHeight || ball.ballCenter.y <= 0;
         bool ballCanCollide = ball.collisionCooldown <= 0;
 
         if (player1Scores)
