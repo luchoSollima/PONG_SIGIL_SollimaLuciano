@@ -16,6 +16,9 @@ namespace PONG
 		PADDLE leftPaddle;
 		PADDLE rightPaddle;
 
+		Color WHITE;
+		Color BLACK;
+
 		int player1Score = 0;
 		int player2Score = 0;
 		int winningScore = 5;

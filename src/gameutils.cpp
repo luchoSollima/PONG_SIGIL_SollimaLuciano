@@ -13,6 +13,11 @@ namespace PONG
         InitPaddles(leftPaddle, rightPaddle, deltaTime);
     }
 
+    void InitColors()
+    {
+
+    }
+
     void DrawGameElements(BALL ball, PADDLE leftPaddle, PADDLE rightPaddle, int player1Score, int player2Score, int player1GamesWon, int player2GamesWon)
     {
         BeginDrawing();
