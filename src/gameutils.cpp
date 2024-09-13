@@ -2,7 +2,7 @@
 #include "ball.h"
 #include "paddles.h"
 #include "constants.h"
-#include "raylib.h"
+#include "sl.h"
 
 namespace PONG
 {
@@ -13,10 +13,11 @@ namespace PONG
         InitPaddles(leftPaddle, rightPaddle, deltaTime);
     }
 
-    void InitColors()
+    void InitColors(Color& WHITE, Color& BLACK)
     {
 
     }
+
 
     void DrawGameElements(BALL ball, PADDLE leftPaddle, PADDLE rightPaddle, int player1Score, int player2Score, int player1GamesWon, int player2GamesWon)
     {
