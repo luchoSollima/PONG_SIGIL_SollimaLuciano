@@ -24,25 +24,25 @@ namespace PONG
 
         DrawMenuElements(buttonPlay, buttonRules, buttonCredits, buttonExit);
 
+        
 
-
-        if (IsMouseHoveringOverButton(buttonExit) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (IsMouseHoveringOverButton(buttonExit) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Exit;
 
-        else if (IsMouseHoveringOverButton(buttonPlay) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        else if (IsMouseHoveringOverButton(buttonPlay) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Game;
 
-        else if (IsMouseHoveringOverButton(buttonRules) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        else if (IsMouseHoveringOverButton(buttonRules) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Rules;
 
-        else if (IsMouseHoveringOverButton(buttonCredits) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        else if (IsMouseHoveringOverButton(buttonCredits) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Credits;
 
     }
 
     void RunGame(SCENES& nextScene, BALL& ball, PADDLE& leftPaddle, PADDLE& rightPaddle, int& player1Score, int& player2Score, int winningScore, bool& isPaused, bool& gameFirstCall)
     {
-        float deltaTime = GetFrameTime();
+        double deltaTime = slGetDeltaTime();
 
         if (gameFirstCall)
         {
@@ -64,7 +64,7 @@ namespace PONG
 
         else
         {
-            if (IsKeyPressed(KEY_P))
+            if (slGetKey('P') != 0)
             {
                 if (!isPaused)
                     isPaused = true;
@@ -84,11 +84,15 @@ namespace PONG
 
             if (isPaused)
             {
-                DrawText("Game Paused", 300, 200, 40, LIGHTGRAY);
-                DrawText("Press P to resume", 290, 250, 30, LIGHTGRAY);
+                slText(300.0, 200.0, "Game Paused");
+                slText(290.0, 250.0, "Press P to resume");
+                //DrawText("Game Paused", 300, 200, 40, LIGHTGRAY);
+                //DrawText("Press P to resume", 290, 250, 30, LIGHTGRAY);
 
-                DrawText("Game Paused", 1050, 200, 40, LIGHTGRAY);
-                DrawText("Press P to resume", 1040, 250, 30, LIGHTGRAY);
+                slText(1050.0, 200.0, "Game Paused");
+                slText(1040.0, 250.0, "Press P to resume");
+                //DrawText("Game Paused", 1050, 200, 40, LIGHTGRAY);
+                //DrawText("Press P to resume", 1040, 250, 30, LIGHTGRAY);
             }
         }
 
@@ -103,7 +107,7 @@ namespace PONG
 
         DrawRules(buttonMainMenu);
 
-        if (IsMouseHoveringOverButton(buttonMainMenu) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (IsMouseHoveringOverButton(buttonMainMenu) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Menu;
     }
 
@@ -116,7 +120,7 @@ namespace PONG
 
         DrawCredits(buttonMainMenu);
 
-        if (IsMouseHoveringOverButton(buttonMainMenu) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (IsMouseHoveringOverButton(buttonMainMenu) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Menu;
     }
 
@@ -129,7 +133,7 @@ namespace PONG
 
         DrawEndScreen(buttonMainMenu, player1Score, winningScore);
 
-        if (IsMouseHoveringOverButton(buttonMainMenu) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (IsMouseHoveringOverButton(buttonMainMenu) && slGetMouseButton(SL_MOUSE_BUTTON_LEFT) != 0)
             nextScene = SCENES::Menu;
     }
 

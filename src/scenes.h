@@ -2,6 +2,7 @@
 
 #include "runprogram.h"
 #include "ball.h"
+#include "sl.h"
 
 namespace PONG
 {
