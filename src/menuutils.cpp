@@ -1,6 +1,7 @@
 #include "menuutils.h"
-#include "raylib.h"
 #include "constants.h"
+#include "sl.h"
+#include "gameutils.h"
 
 namespace PONG
 {
@@ -21,7 +22,8 @@ namespace PONG
 	{
 		Vector2 mousePosition;
 
-		mousePosition = GetMousePosition();
+		mousePosition.x = slGetMouseX();
+		mousePosition.y = slGetMouseY();
 
 
 		bool hoveringOverButton = mousePosition.x > button.rectangle.x && mousePosition.x < button.rectangle.x + button.rectangle.width && mousePosition.y > button.rectangle.y && mousePosition.y < button.rectangle.y + button.rectangle.height;
