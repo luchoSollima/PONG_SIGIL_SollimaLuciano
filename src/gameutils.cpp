@@ -15,17 +15,23 @@ namespace PONG
 
     void InitColors(Color& WHITE, Color& BLACK)
     {
-        WHITE.r = 255;
-        WHITE.g = 255;
-        WHITE.b = 255;
+        WHITE.r = 0.255f;
+        WHITE.g = 0.255f;
+        WHITE.b = 0.255f;
+
+        BLACK.r = 0.0f;
+        BLACK.g = 0.0f;
+        BLACK.b = 0.0f;
     }
 
 
     void DrawGameElements(BALL ball, PADDLE leftPaddle, PADDLE rightPaddle, int player1Score, int player2Score, int player1GamesWon, int player2GamesWon)
     {
-        BeginDrawing();
+        //BeginDrawing();
 
-        ClearBackground(BLACK);
+        slRender();
+
+        //ClearBackground(BLACK);
 
 
         DrawBall(ball);
@@ -49,7 +55,7 @@ namespace PONG
         DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, WHITE);
 
 
-        EndDrawing();
+        //EndDrawing();
     }
 
     void CheckCollisions(BALL& ball, PADDLE& leftPaddle, PADDLE& rightPaddle, int& player1Score, int& player2Score, float deltaTime)
