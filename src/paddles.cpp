@@ -22,24 +22,24 @@ namespace PONG
 
     void DrawPaddles(PADDLE leftPaddle, PADDLE rightPaddle)
     {
-        DrawRectangleRec(leftPaddle.rectangle, leftPaddle.paddleColor);
-        DrawRectangleRec(rightPaddle.rectangle, rightPaddle.paddleColor);
+        //DrawRectangleRec(leftPaddle.rectangle, leftPaddle.paddleColor);
+        //DrawRectangleRec(rightPaddle.rectangle, rightPaddle.paddleColor);
     }
 
     void UpdatePaddles(PADDLE& leftPaddle, PADDLE& rightPaddle)
     {
-        if (IsKeyDown(KEY_UP) && rightPaddle.rectangle.y >= 0)
+        if (slGetKey(SL_KEY_UP) != 0 && rightPaddle.rectangle.y >= 0)
             rightPaddle.rectangle.y -= rightPaddle.speedY;
 
-        if (IsKeyDown(KEY_DOWN) && rightPaddle.rectangle.y <= screenHeight - rightPaddle.rectangle.height)
+        if (slGetKey(SL_KEY_DOWN) != 0 && rightPaddle.rectangle.y <= screenHeight - rightPaddle.rectangle.height)
             rightPaddle.rectangle.y += rightPaddle.speedY;
 
 
 
-        if (IsKeyDown(KEY_W) && leftPaddle.rectangle.y >= 0)
+        if (slGetKey('W') != 0 && leftPaddle.rectangle.y >= 0)
             leftPaddle.rectangle.y -= leftPaddle.speedY;
 
-        if (IsKeyDown(KEY_S) && leftPaddle.rectangle.y <= screenHeight - leftPaddle.rectangle.height)
+        if (slGetKey('S') != 0 && leftPaddle.rectangle.y <= screenHeight - leftPaddle.rectangle.height)
             leftPaddle.rectangle.y += leftPaddle.speedY;
     }
 

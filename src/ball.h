@@ -1,8 +1,8 @@
 #pragma once
 
-#include "raylib.h"
 #include "paddles.h"
 #include "gameutils.h"
+#include "sl.h"
 
 namespace PONG
 {

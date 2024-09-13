@@ -5,6 +5,24 @@
 
 namespace PONG
 {
+	struct Rectangle
+	{
+		int width;
+		int height;
+		int x;
+		int y;
+	};
+
+	struct Vector2
+	{
+		int x;
+		int y;
+	};
+
+	struct Color
+	{
+
+	};
 
 	struct BALL;
 

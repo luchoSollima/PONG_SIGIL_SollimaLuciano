@@ -28,7 +28,8 @@ namespace PONG
 
     void DrawBall(BALL ball)
     {
-        DrawCircleV(ball.ballCenter, ball.radius, ball.circleColor);
+        slCircleFill(ball.ballCenter.x, ball.ballCenter.y, ball.radius, 10);
+        //DrawCircleV(ball.ballCenter, ball.radius, ball.circleColor);
     }
 
     void MoveBall(BALL& ball)
