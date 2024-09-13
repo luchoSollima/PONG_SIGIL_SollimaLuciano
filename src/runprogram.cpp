@@ -1,6 +1,6 @@
 #include "runprogram.h"
 #include "scenes.h"
-#include "raylib.h"
+#include "sl.h"
 #include "constants.h"
 #include "ball.h"
 #include "paddles.h"
@@ -24,11 +24,10 @@ namespace PONG
 		bool gameFirstCall = true;
 
 
-		InitWindow(screenWidth, screenHeight, "SPEED PONG");
+		slWindow(screenWidth, screenHeight, "SPEED PONG", 1);
 
 
-
-		while (!WindowShouldClose())
+		while (!slShouldClose())
 		{
 			switch (nextScene)
 			{
@@ -62,14 +61,14 @@ namespace PONG
 				break;
 			case SCENES::Exit:
 
-				CloseWindow();
+				slClose();
 
 			default:
 				break;
 			}
 		}
 
-		CloseWindow();
+		slClose();
 	}
 
 }
